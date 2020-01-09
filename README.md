@@ -1,12 +1,17 @@
-# artu
-Automated RHEL Template Updates: Regular updates of RHEL OS VM tempates to ensure security compliance and
-reduce patching on deployment of services.
+# artu - Automated RHEL Template Updates
+For the regular updates of RHEL OS VM tempates to ensure security compliance and
+reduce patching when deploying VMs and services.
 
 ## Getting Started
 
 
-### Prerequisites
+### Software used
+Ansible
+Satellite (or Pulp repo management)
+Bash
 
+### Prerequisites
+Existing working template
 
 ### Installing
 
@@ -15,10 +20,10 @@ reduce patching on deployment of services.
 
 
 ## Authors
-
+Thomas DuVally <tduvally@brown.edu>
 
 ## License
-
+None
 
 ## Acknowledgments
 
