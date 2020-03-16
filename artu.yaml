@@ -1,0 +1,70 @@
+# This is the ansible playbook to run the template work
+
+# Deploy latest template to temp name VM, temp IP, etc
+  # Failure
+    # reports via email
+    vmware_guest
+
+# Transfer update.sh script to VM
+  # Failure
+    # reports via email
+    # shutdown temp VM
+    # delete temp VM
+    vmware_vm_shell
+
+# Execute script, wait for output
+  # Failure 
+    # reports via email
+    # shutdown temp VM
+    # delete temp VM
+    # delete subscription in Satellite
+    vmware_vm_shell
+
+# Clean VM
+  # Failure
+    # reports via email
+    # shutdown temp VM
+    # delete temp VM
+    vmware_vm_shell
+
+# Shutdown VM
+  # Failure
+    # reports via email
+    # exit
+    vmware_guest_powerstate
+
+# Get UUID of latest
+  # Failure
+    # report via email
+    # exit
+    vmware-guest-info-module
+
+# Get UUID of temp
+  # Failure
+    # report via email
+    # exit
+    vmware-guest-info-module
+
+# Rename latest to previous
+  # Failure
+    # reports via email
+    # exit
+    vmware_guest
+
+# Rename temp to latest
+  # Failure
+    # reports via email
+    # exit
+    vmware_guest
+
+# Update notes on latest
+  # Failure
+    # reports via email
+    # exit
+    vmware_guest
+
+# Convert new latest to template
+  # Failure
+    # reports via email
+    # exit
+    vmware_guest

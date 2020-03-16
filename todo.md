@@ -1,5 +1,5 @@
 # Ansible
-* role vs playbooks?
+* role
 * location
   * Puppet server?
   * CI/CD server? 
