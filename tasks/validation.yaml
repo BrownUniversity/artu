@@ -1,0 +1,19 @@
+---
+# A work in progress
+- name: check_configuration 
+  assert:
+    that: "{{ item.that }}"
+    msg: "{{ item.err_msg }}"
+  loop:
+    - that:
+       - "VM_IP is defined"
+       - "VM_IP | ipaddr "
+      err_msg: "'VM_IP' must be a valid IP address"
+      check:  IP
+    - that:
+       - "VM_info_env == 'prod' or VM_info_env == 'qa' or VM_info_env == 'dev'"
+      err_msg: "'VM_info_env' must be dev, prod, or qa"
+      check: Env check
+  loop_control:
+  label: "{{ item.check}}"
+...

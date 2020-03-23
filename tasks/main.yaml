@@ -1,0 +1,13 @@
+---
+- include_tasks: deploy.yaml
+- include_tasks: tranfer.yaml
+- include_tasks: update.yaml
+- include_tasks: cleaninstall.yaml
+- include_tasks: shutdown.yaml
+- include_tasks: getuuidlatest.yaml
+- include_tasks: getuuidtemp.yaml
+- include_tasks: renameold.yaml
+- include_tasks: renamelatest.yaml
+- include_tasks: updatenotes.yaml
+- include_tasks: convert.yaml
+...

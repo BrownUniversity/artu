@@ -1,0 +1,12 @@
+    vs_hostname: "{{ vsphere_definition[vsphere_lookup].vsp_hostname }}"
+    VM_cpu: 1
+    VM_memory: 4096    # in megabytes
+    VM_info_key: "Standard_DEV"     # Sat subscription key
+    vs_datacenter: "{{ vsphere_definition[vsphere_lookup].vsp_datacenter }}"
+    vs_cluster: "{{ vsphere_definition[vsphere_lookup].vsp_cluster }}"
+    vs_datastore: "{{ vsphere_definition[vsphere_lookup].vsp_datastore }}"
+    vs_folder: "{{ vsphere_definition[vsphere_lookup].vsp_folder }}"
+    vs_template: " NOT SURE YET"
+    vs_portgroup: "10.4.25.x"
+    VM_domain: "services.brown.edu"  
+

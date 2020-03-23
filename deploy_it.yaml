@@ -1,0 +1,8 @@
+# ansible-playbook deploy_it.yaml -i templates.yaml --check
+#
+- hosts: all
+  gather_facts: false
+  vars_files: 
+    - pass.yaml
+  roles:
+     - ARTU              

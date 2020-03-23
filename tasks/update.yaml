@@ -1,0 +1,22 @@
+- name: Update VM 
+  vmware_vm_shell:
+    hostname: "{{ vs_hostname }}"
+    username: "{{ vs_name }}"
+    password: "{{ vs_password }}"
+    datacenter: "{{ vs_datacenter }}"
+    folder: "/{{ vs_datacenter }}/{{ vs_folder }}"
+    vm_id: "{{ inventory_hostname }}"
+    vm_username: root
+    vm_password: "nopassword"
+    vm_shell: "{{ item.shell }}"
+    vm_shell_args: "{{ item.args }}"
+    wait_for_process: True
+    timeout: 3600                    #3600 seconds is default
+  register: shell_command
+  loop: 
+    - { shell: "/usr/bin/wget", args: "-O /root/cis-setup.sh {{ VM_script }}" }
+    - { shell: "/usr/bin/chmod", args: "+x /root/cis-setup.sh" }
+    - { shell: "/root/cis-setup.sh", args: "{{VM_info}}" }
+  loop_control:
+    label: "{{ item.shell }}"
+  delegate_to: localhost

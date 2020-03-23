@@ -1,0 +1,33 @@
+---
+- name: Deploy VM 
+  vmware_guest:
+    hostname: "{{ vs_hostname }}"
+    username: "{{ vs_name }}"
+    password: "{{ vs_password }}"
+    validate_certs: no
+    datacenter: "{{ vs_datacenter }}"
+    datastore: "{{ vs_datastore }}"
+    name: "{{ inventory_hostname }}"
+    annotation: "{{ VM_notes }}"
+    template: "{{ vs_template }}"
+    cluster: "{{ vs_cluster }}" 
+    state: poweredon 
+    folder: "/{{ vs_datacenter }}/{{ vs_folder }}"
+    hardware:
+      memory_mb: "{{ VM_memory }}"
+      num_cpus: "{{VM_cpu }}"
+      scsi: paravirtual
+    customization:
+      domain: "{{ VM_domain }}"
+      dns_servers:
+        - 10.1.1.10
+      dns_suffix:
+        - "{{ VM_domain }}"
+    networks:
+      - name: "{{ vs_portgroup }}"
+        ip: "{{ VM_ip }}"
+        gateway: "{{ VM_ip | regex_replace('(^.*\\.).*$', '\\1') }}1"
+        netmask: 255.255.255.0
+    wait_for_ip_address: True
+  delegate_to: localhost
+  register: vm_facts
