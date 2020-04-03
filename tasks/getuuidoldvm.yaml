@@ -1,0 +1,14 @@
+---
+- name: Get old UUID
+  vmware-guest-info:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    validate_certs: no
+    datacenter: "{{ datacenter_name }}"
+    name: "{{ vs_template }}"
+    schema: "vsphere"
+    properties:
+      - instance_uuid
+  delegate_to: localhost
+  register: oldtemplate_uuid_info

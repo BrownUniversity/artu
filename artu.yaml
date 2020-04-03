@@ -11,7 +11,7 @@
     # report via email
     # shutdown temp VM
     # delete temp VM
-    vmware_vm_shell
+    vmware_guest_file_operation
 
 # Execute script, wait for output
   # Failure 

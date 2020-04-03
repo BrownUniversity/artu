@@ -1,0 +1,13 @@
+---
+- name: Rename old template
+  vmware_guest: 
+    hostname: "{{ vs_hostname }}"
+    username: "{{ vs_name }}"
+    password: "{{ vs_password }}"
+    validate_certs: no
+    datacenter: "{{ vs_datacenter }}"
+    datastore: "{{ vs_datastore }}"
+    uuid: "{{ oldtemplate_uuid_info }}"
+    name: "{{vs_os}}_{{ ansible_date_time }}"
+    state: present
+  delegate_to: localhost

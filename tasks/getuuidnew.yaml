@@ -1,0 +1,14 @@
+---
+- name: Get latest UUID
+  vmware-guest-info:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    validate_certs: no
+    datacenter: "{{ datacenter_name }}"
+    name: "{{ inventory_hostname }}"
+    schema: "vsphere"
+    properties:
+      - instance_uuid
+  delegate_to: localhost
+  register: newvm_uuid_info

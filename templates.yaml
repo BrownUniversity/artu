@@ -8,6 +8,7 @@ one:
     vs_portgroup: "10.4.25.x"                # Usually subnet plus ".x"
     vsphere_lookup: ent_dev
     vs_template: RHEL8_latest
+    vs_os: RHEL8
 two: 
   hosts:
     rhel7updating:                              # Change to name of VM
@@ -18,6 +19,7 @@ two:
     vs_portgroup: "10.4.25.x"                # Usually subnet plus ".x"
     vsphere_lookup: ent_dev
     vs_template: RHEL7_latest
+    vs_os: RHEL7
 three: 
   hosts:
     rhel6updating:                              # Change to name of VM
@@ -28,3 +30,4 @@ three:
     vs_portgroup: "10.4.25.x"                # Usually subnet plus ".x"
     vsphere_lookup: ent_dev
     vs_template: RHEL6_latest
+    vs_os: RHEL6

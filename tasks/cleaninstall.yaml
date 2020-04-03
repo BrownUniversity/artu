@@ -1,0 +1,15 @@
+- name: Clean the install 
+  vmware_vm_shell:
+    hostname: "{{ vs_hostname }}"
+    username: "{{ vs_name }}"
+    password: "{{ vs_password }}"
+    datacenter: "{{ vs_datacenter }}"
+    folder: "/{{ vs_datacenter }}/{{ vs_folder }}"
+    vm_id: "{{ inventory_hostname }}"
+    vm_username: root
+    vm_password: "nopassword"
+    vm_shell: "/root/sysclean.sh"
+    vm_shell_args: "-f"
+    wait_for_process: True
+    timeout: 3600                    #3600 seconds is default
+  delegate_to: localhost
