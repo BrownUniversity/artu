@@ -1,0 +1,13 @@
+---
+- name: Convert latest to tempalte
+  vmware_guest: 
+    hostname: "{{ vs_hostname }}"
+    username: "{{ vs_name }}"
+    password: "{{ vs_password }}"
+    validate_certs: no
+    datacenter: "{{ vs_datacenter }}"
+    datastore: "{{ vs_datastore }}"
+    uuid: "{{ newvm_uuid_info }}"
+    is_template: yes
+    state: present
+  delegate_to: localhost

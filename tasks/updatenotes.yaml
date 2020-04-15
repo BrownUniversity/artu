@@ -1,0 +1,13 @@
+---
+- name: Update notes
+  vmware_guest: 
+    hostname: "{{ vs_hostname }}"
+    username: "{{ vs_name }}"
+    password: "{{ vs_password }}"
+    validate_certs: no
+    datacenter: "{{ vs_datacenter }}"
+    datastore: "{{ vs_datastore }}"
+    uuid: "{{ newvm_uuid_info }}"
+    annotation: "Updated: {{ ansible_date_time.date}} "
+    state: present
+  delegate_to: localhost

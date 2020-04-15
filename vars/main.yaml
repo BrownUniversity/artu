@@ -1,5 +1,5 @@
 ---
-# vars file for CreateVMPrd
+# vars file for artu
 vsphere_definition:
   ent_dev:
     vsp_datastore: "ds-dev-nfs-templates"
