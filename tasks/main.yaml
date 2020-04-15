@@ -1,6 +1,6 @@
 ---
 - include_tasks: deploy.yaml
-- include_tasks: tranfer.yaml
+- include_tasks: transfer.yaml
 - include_tasks: update.yaml
 - include_tasks: cleaninstall.yaml
 - include_tasks: shutdown.yaml
