@@ -1,0 +1,10 @@
+one: 
+  hosts:
+    rhel7updating:                              # Change to name of VM
+  vars:
+    VM_ip: 10.4.25.117                         # IP 
+    VM_notes: "RHEL 7 updated\nSome test info"    # description in Vcenter
+    vs_portgroup: "10.4.25.x"                # Usually subnet plus ".x"
+    vsphere_lookup: ent_dev
+    vs_template: RHEL7_latest
+    vs_os: RHEL7

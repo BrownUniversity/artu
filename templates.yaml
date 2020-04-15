@@ -3,8 +3,7 @@ one:
     rhel8updating:                              # Change to name of VM
   vars:
     VM_ip: 10.4.25.116                         # IP 
-    VM_info_env: dev                       # dev, qa, or prod
-    VM_notes: 'RHEL 8 updated\nEFI boot'    # description in Vcenter
+    VM_notes: "RHEL 8 updated\nEFI boot"    # description in Vcenter
     vs_portgroup: "10.4.25.x"                # Usually subnet plus ".x"
     vsphere_lookup: ent_dev
     vs_template: RHEL8_latest
@@ -14,8 +13,7 @@ two:
     rhel7updating:                              # Change to name of VM
   vars:
     VM_ip: 10.4.25.117                         # IP 
-    VM_info_env: dev                       # dev, qa, or prod
-    VM_notes: 'RHEL 7 updated\nSome test info'    # description in Vcenter
+    VM_notes: "RHEL 7 updated\nSome test info"    # description in Vcenter
     vs_portgroup: "10.4.25.x"                # Usually subnet plus ".x"
     vsphere_lookup: ent_dev
     vs_template: RHEL7_latest
@@ -25,8 +23,7 @@ three:
     rhel6updating:                              # Change to name of VM
   vars:
     VM_ip: 10.4.25.125                         # IP 
-    VM_info_env: dev                       # dev, qa, or prod
-    VM_notes: 'RHEL 6 updated\nOld os, don't use.'    # description in Vcenter
+    VM_notes: "RHEL 6 updated\nOld os, don't use."    # description in Vcenter
     vs_portgroup: "10.4.25.x"                # Usually subnet plus ".x"
     vsphere_lookup: ent_dev
     vs_template: RHEL6_latest

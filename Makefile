@@ -1,6 +1,5 @@
 # Variables
 
-
 # Help system
 .DEFAULT_GOAL := help
 
@@ -21,49 +20,9 @@ endif
 # Targets
 
 # Tests
-#test.deploy: @ test deploying templates
-test.deploy: pass.yaml
-	ansible-playbook ./tasks/deploy.yaml -i templates.yaml
 
-#test.transfer: @ test update file transfer
-test.transfer: pass.yaml
-	ansible-playbook ./tasks/transfer.yaml -i templates.yaml
-
-#test.update: @ test update command and script
-test.update: pass.yaml
-	ansible-playbook ./tasks/update.yaml -i templates.yaml
-
-#test.cleaninstall: @ test clean the install
-test.cleaninstall: pass.yaml
-	ansible-playbook ./tasks/cleaninstall.yaml -i templates.yaml
-
-#test.shutdown: @ test the shutdown
-test.shutdown: pass.yaml
-	ansible-playbook ./tasks/shutdown.yaml -i templates.yaml
-
-#test.getuuidnewvm: @ test new VM UUID
-test.getuuidnewvm: pass.yaml
-	ansible-playbook ./tasks/getuuidnewvm.yaml -i templates.yaml
-
-#test.getuuidoldtemplate: @ test old template UUID
-test.getuuidoldtemplate: pass.yaml
-	ansible-playbook ./tasks/getuuidoldtemplate.yaml -i templates.yaml
-
-#test.renameold: @ test old template rename
-test.renameold: pass.yaml
-	ansible-playbook ./tasks/renameold.yaml -i templates.yaml
-
-#test.renamelatest: @ test new VM rename
-test.renamelatest: pass.yaml
-	ansible-playbook ./tasks/renamelatest.yaml -i templates.yaml
-
-#test.updatenotes: @ test updating notes
-test.updatenotes: pass.yaml
-	ansible-playbook ./tasks/updatenotes.yaml -i templates.yaml
-
-#test.convert: @ test converting new to template
-test.convert: pass.yaml
-	ansible-playbook ./tasks/convert.yaml -i templates.yaml
-
+#check.artu: @ run artu with check
+check.artu: pass.yaml
+	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml -i test_templates.yaml --check
 
 # Cleanup from tests
