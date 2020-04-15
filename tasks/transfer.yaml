@@ -5,7 +5,7 @@
     username: "{{ vs_name }}"
     password: "{{ vs_password }}"
     validate_certs: no
-    vm_id: "{{ inventory_name }}"
+    vm_id: "{{ inventory_hostname }}"
     copy: 
       src: files/update.sh
       dest: /root/update.sh
