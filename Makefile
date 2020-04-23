@@ -1,4 +1,5 @@
 # Variables
+YML=test_templates.yaml
 
 # Help system
 .DEFAULT_GOAL := help
@@ -23,6 +24,9 @@ endif
 
 #check.artu: @ run artu with check
 check.artu: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml -i test_templates.yaml --check
+	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml -i ${YML} --check
 
+#artu: @ run it all
+artu: pass.yaml
+	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml -i ${YML}
 # Cleanup from tests
