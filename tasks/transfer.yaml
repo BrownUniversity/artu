@@ -4,8 +4,8 @@
     hostname: "{{ vs_hostname }}"
     username: "{{ vs_name }}"
     password: "{{ vs_password }}"
-    vm_username: "root"
-    vm_password: "nopassword"
+    vm_username: "{{ vm_username }}"
+    vm_password: "{{ vm_password }}"
     validate_certs: no
     vm_id: "{{ inventory_hostname }}"
     copy: 
