@@ -11,5 +11,3 @@
     annotation: "Updated: {{ ansible_date_time.date}} "
     state: present
   delegate_to: localhost
-tags: 
-  - notes

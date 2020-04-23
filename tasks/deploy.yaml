@@ -31,5 +31,3 @@
     wait_for_ip_address: True
   delegate_to: localhost
   register: vm_facts
-tags: 
-  - deploy
