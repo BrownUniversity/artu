@@ -83,7 +83,7 @@ artu.convert: pass.yaml
 #Checks
 #check.artu: @ run artu with check and TAG
 check.artu: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags ${TAG} --check
+	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags ${TAGS} --check
 
 #artu: @ run it all
 artu: pass.yaml
