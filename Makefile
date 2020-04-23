@@ -10,8 +10,8 @@ ANSOPT=
 help:
 	@grep -E '[a-zA-Z\.\-]+:.*?@ .*$$' $(MAKEFILE_LIST)| tr -d '#'  | awk 'BEGIN {FS = ":.*?@ "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-#vars: @ list vars
-vars: 
+#var.list: @ list vars
+var.list: 
 	@echo YML: template file to run. Default: ${YML}
 	@echo TAGS: Tags to run for artu.check target. Default: ${TAGS}
 	@echo ANSOPT: Options to ansible, like verbose. Default: ${ANSOPT}
