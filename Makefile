@@ -63,7 +63,7 @@ artu.renamelatest: pass.yaml
 	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags renamelatest
 
 #artu.renameold: @ run renameold
-artu.deploy: pass.yaml
+artu.renameold: pass.yaml
 	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags renameold
 
 #artu.notes: @ run notes
