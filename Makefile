@@ -12,9 +12,9 @@ help:
 
 #vars: @ list vars
 vars: 
-	@echo "YML: template file to run. Default: ${YML}"
-	@echo "TAGS: Tags to run for artu.check target. Default: ${TAGS}
-	@echo "ANSOPT: Options to ansible, like verbose. Default: ${ANSOPT}
+	@echo YML: template file to run. Default: ${YML}
+	@echo TAGS: Tags to run for artu.check target. Default: ${TAGS}
+	@echo ANSOPT: Options to ansible, like verbose. Default: ${ANSOPT}
 
 # Collected targets
 #secrets : @ Files to decrypt
