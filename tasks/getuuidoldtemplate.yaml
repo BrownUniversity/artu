@@ -12,3 +12,6 @@
       - instance_uuid
   delegate_to: localhost
   register: oldtemplate_uuid_info
+  tags: 
+    - uuid
+    - olduuid

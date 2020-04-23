@@ -13,3 +13,4 @@
       src: files/update.sh
       dest: /root/update.sh
     delegate_to: localhost
+    tags: transfer
