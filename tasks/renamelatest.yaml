@@ -11,6 +11,6 @@
     name: "{{vs_os}}_latest"
     state: present
   delegate_to: localhost
-  tags: 
-   - rename
-   - renamelatest
+tags: 
+  - rename
+  - renamelatest

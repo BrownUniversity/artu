@@ -11,6 +11,6 @@
     name: "{{vs_os}}_{{ ansible_date_time }}"
     state: present
   delegate_to: localhost
-  tags: 
-    - rename
-    - renameold
+tags: 
+  - rename
+  - renameold

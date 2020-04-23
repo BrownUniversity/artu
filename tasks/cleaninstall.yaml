@@ -13,4 +13,5 @@
     wait_for_process: True
     timeout: 3600                    #3600 seconds is default
   delegate_to: localhost
-  tags: cleaninstall
+tags: 
+  - cleaninstall

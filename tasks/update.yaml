@@ -19,4 +19,5 @@
   loop_control:
     label: "{{ item.shell }}"
   delegate_to: localhost
-  tags: update
+tags:
+  - update

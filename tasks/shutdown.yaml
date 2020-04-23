@@ -11,4 +11,5 @@
     state: shutdown-guest
     state_change_timeout: 200
   delegate_to: localhost
-  tags: shutdown
+tags: 
+  - shutdown

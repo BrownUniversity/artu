@@ -11,4 +11,5 @@
     is_template: yes
     state: present
   delegate_to: localhost
-  tags: convert
+tags: 
+  - convert
