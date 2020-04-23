@@ -7,6 +7,7 @@
     vm_username: "{{ vm_username }}"
     vm_password: "{{ vm_password }}"
     validate_certs: no
+    datacenter: "{{ vs_datacenter }}"
     vm_id: "{{ inventory_hostname }}"
     copy: 
       src: files/update.sh
