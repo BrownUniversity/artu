@@ -14,6 +14,8 @@
       dest: /root/update.sh
   delegate_to: localhost
   register: result
-- debug:
-  var: result 
-  verbosity: 2
+
+- name: transfer Output
+  debug:
+    var: result 
+    verbosity: 2
