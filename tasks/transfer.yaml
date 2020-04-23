@@ -14,6 +14,7 @@
       dest: /root/update.sh
   delegate_to: localhost
   register: result
+  tags: transfer
 
 - name: transfer Output
   debug:
