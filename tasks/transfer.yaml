@@ -8,7 +8,7 @@
     vm_password: "{{ vm_password }}"
     validate_certs: no
     datacenter: "{{ vs_datacenter }}"
-    vm_id: "{{ inventory_hostname }}"
+    vm_id: "{{ inventory_hostname }}.services.brown.edu"
     copy: 
       src: files/update.sh
       dest: /root/update.sh
