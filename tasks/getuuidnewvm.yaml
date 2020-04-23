@@ -12,3 +12,4 @@
       - instance_uuid
   delegate_to: localhost
   register: newvm_uuid_info
+  tags: [ uuid, newuuid ]
