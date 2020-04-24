@@ -1,3 +1,4 @@
+---
 - name: Clean the install 
   vmware_vm_shell:
     hostname: "{{ vs_hostname }}"

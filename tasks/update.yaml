@@ -1,3 +1,4 @@
+---
 - name: Update VM 
   vmware_vm_shell:
     hostname: "{{ vs_hostname }}"
