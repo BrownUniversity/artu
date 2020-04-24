@@ -15,7 +15,6 @@
   delegate_to: localhost
   register: result
   tags: transfer
-
 - name: transfer Output
   debug:
     var: result 
