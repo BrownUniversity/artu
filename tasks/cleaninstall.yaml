@@ -6,8 +6,8 @@
     datacenter: "{{ vs_datacenter }}"
     folder: "/{{ vs_datacenter }}/{{ vs_folder }}"
     vm_id: "{{ inventory_hostname }}"
-    vm_username: root
-    vm_password: "nopassword"
+    vm_username: "{{ vm_username }}"
+    vm_password: "{{ vm_password }}"
     vm_shell: "/root/sysclean.sh"
     vm_shell_args: "-f"
     wait_for_process: True

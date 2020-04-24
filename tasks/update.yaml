@@ -6,8 +6,8 @@
     datacenter: "{{ vs_datacenter }}"
     folder: "/{{ vs_datacenter }}/{{ vs_folder }}"
     vm_id: "{{ inventory_hostname }}"
-    vm_username: root
-    vm_password: "nopassword"
+    vm_username: "{{ vm_username }}"
+    vm_password: "{{ vm_password }}"
     vm_shell: "{{ item.shell }}"
     vm_shell_args: "{{ item.args }}"
     wait_for_process: True
@@ -19,3 +19,4 @@
   loop_control:
     label: "{{ item.shell }}"
   delegate_to: localhost
+  tags: update
