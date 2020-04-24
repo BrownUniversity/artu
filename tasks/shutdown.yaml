@@ -5,8 +5,6 @@
     username: "{{ vs_name }}"
     password: "{{ vs_password }}"
     validate_certs: no
-    datacenter: "{{ vs_datacenter }}"
-    datastore: "{{ vs_datastore }}"
     name: "{{ inventory_hostname }}"
     state: shutdown-guest
     state_change_timeout: 200
