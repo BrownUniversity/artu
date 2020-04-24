@@ -9,15 +9,9 @@
     vm_id: "{{ inventory_hostname }}"
     vm_username: "{{ vm_username }}"
     vm_password: "{{ vm_password }}"
-    vm_shell: "{{ item.shell }}"
-    vm_shell_args: "{{ item.args }}"
+    vm_shell: /root/update.sh
     wait_for_process: True
     timeout: 3600                    #3600 seconds is default
   register: shell_command
-  loop: 
-    - { shell: "/usr/bin/chmod", args: "+x /root/update.sh" }
-    - { shell: "/root/update.sh" }
-  loop_control:
-    label: "{{ item.shell }}"
   delegate_to: localhost
   tags: update
