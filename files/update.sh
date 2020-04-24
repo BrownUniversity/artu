@@ -20,6 +20,9 @@ yum_update() {
   $YUMBIN $YUMARGS $YUMOPTS update
 }
 
+sat_reg
+yum_update
+
   # Failure 
     # exit with message and status
 
