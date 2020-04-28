@@ -7,9 +7,10 @@
     validate_certs: no
     datacenter: "{{ vs_datacenter }}"
     name: "{{ inventory_hostname }}"
-    schema: "vsphere"
-    properties:
-      - instance_uuid
   delegate_to: localhost
-  register: newvm_uuid_info
+  register: latestvm_facts
   tags: [ uuid, newuuid ]
+- name: Print latest uuid
+  debug:
+    msg: "{{ latestvm_facts.instance.instance_uuid }}"
+  tags: always
