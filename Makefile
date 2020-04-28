@@ -62,15 +62,15 @@ artu.olduuid: pass.yaml
 
 #artu.rename: @ run rename
 artu.rename: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags rename
+	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags "rename,uuid"
 
 #artu.renamelatest: @ run renamelatest
 artu.renamelatest: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags renamelatest
+	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags "renamelatest,newuuid"
 
 #artu.renameold: @ run renameold
 artu.renameold: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags renameold
+	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags "renameold,olduuid"
 
 #artu.notes: @ run notes
 artu.notes: pass.yaml
