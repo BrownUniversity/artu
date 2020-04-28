@@ -7,7 +7,7 @@
     validate_certs: no
     datacenter: "{{ vs_datacenter }}"
     datastore: "{{ vs_datastore }}"
-    uuid: "{{ oldtemplate_uuid_info }}"
+    uuid: "{{ oldvm_facts.instance.instance_uuid }}"
     name: "{{vs_os}}_{{ ansible_date_time }}"
     state: present
   delegate_to: localhost
