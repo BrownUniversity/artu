@@ -26,6 +26,10 @@ else
 	blackbox_decrypt_all_files
 endif
 
+#chmod.script: @ ensure scripts have execute perm
+chmod.script:
+	chmod 755 files/sat_remove.shell
+
 # Targets
 
 #artu.deploy: @ run deploy
@@ -37,7 +41,7 @@ artu.transfer: pass.yaml
 	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags transfer
 
 #artu.update: @ run update
-artu.update: pass.yaml
+artu.update: pass.yaml chmod.script
 	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags update
 
 #artu.cleaninstall: @ run cleaninstall
