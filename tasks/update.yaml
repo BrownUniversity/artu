@@ -16,6 +16,6 @@
   delegate_to: localhost
   tags: update
 - name: remove satreg # Using local shell script
-  shell: files/sat_remove.sh "{{ inventory_hostname }}" "(( sat_user }}" "{{ sat_passwd | quote }}"
+  shell: files/sat_remove.sh "{{ inventory_hostname }}" "(( sat_user | quote }}" "{{ sat_passwd | quote }}"
   delegate_to: localhost
   tags: [update, satremove]
