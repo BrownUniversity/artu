@@ -7,10 +7,7 @@
     username: "{{ vs_name }}"
     password: "{{ vs_password }}"
     validate_certs: no
-    datacenter: "{{ vs_datacenter }}"
-    datastore: "{{ vs_datastore }}"
-    folder: "/{{ vs_datacenter }}/{{ vs_folder }}"
-    uuid: "{{ latestvm_facts.instance.instance_uuid }}"
+    name: "{{ inventory_hostname }}"
     annotation: "Updated: {{ name_date }} "
     state: present
   delegate_to: localhost
