@@ -1,14 +1,5 @@
 ---
-- name: Rename new Latest
-  vmware_guest: 
-    hostname: "{{ vs_hostname }}"
-    username: "{{ vs_name }}"
-    password: "{{ vs_password }}"
-    validate_certs: no
-    datacenter: "{{ vs_datacenter }}"
-    datastore: "{{ vs_datastore }}"
-    uuid: "{{ latestvm_facts.instance.instance_uuid }}"
-    name: "{{vs_os}}_latest"
-    state: present
+- name: convert new to latest # Usign PWSH script
+  shell: /usr/bin/pwsh files/rename_latest.ps1 "{{ vs_hostname }}" "{{ vs_name }}" "{{ vs_password }}" "{{ inventory_hostname }}" "{{vs_os}}_latest"
   delegate_to: localhost
-  tags: [ rename, renamelatest ]
+  tags: [rename, renamelatest]
