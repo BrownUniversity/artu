@@ -9,8 +9,6 @@
   tags: cleaninstall
 - include_tasks: shutdown.yaml
   tags: shutdown
-- include_tasks: getuuidnewvm.yaml
-  tags: [ uuid, newuuid ]
 - include_tasks: renameold.yaml
   tags: [ rename, renameold ]
 - include_tasks: updatenotes.yaml
