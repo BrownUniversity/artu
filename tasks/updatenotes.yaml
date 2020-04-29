@@ -1,8 +1,7 @@
 ---
-
 - name: Update notes
   vars:
-    name_date: "{{ lookup('pipe','date +%Y-%m') }}
+    name_date: "{{ lookup('pipe','date +%Y-%m') }}"
   vmware_guest: 
     hostname: "{{ vs_hostname }}"
     username: "{{ vs_name }}"
