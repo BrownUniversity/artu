@@ -1,7 +1,7 @@
 ---
 - name: convert old to VM # Usign PWSH script
   vars:
-    name_date: "{{ lookup('pipe','date +%Y_%m') }}"
+    name_date: "{{ lookup('pipe','date +%Y-%m') }}"
   shell: /usr/bin/pwsh files/rename_old.ps1 "{{ vs_hostname }}" "{{ vs_name }}" "{{ vs_password }}" "{{ vs_template }}" "{{vs_os}}_{{ name_date }}"
   delegate_to: localhost
   tags: [rename, renameold]
