@@ -60,10 +60,6 @@ artu.uuid: pass.yaml
 artu.newuuid: pass.yaml
 	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags newuuid
 
-#artu.olduuid: @ run olduuid
-artu.olduuid: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags olduuid
-
 #artu.notes: @ run notes
 artu.notes: pass.yaml
 	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags "uuid,notes"
