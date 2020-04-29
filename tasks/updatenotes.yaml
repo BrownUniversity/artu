@@ -9,6 +9,7 @@
     validate_certs: no
     datacenter: "{{ vs_datacenter }}"
     datastore: "{{ vs_datastore }}"
+    folder: "/{{ vs_datacenter }}/{{ vs_folder }}"
     uuid: "{{ latestvm_facts.instance.instance_uuid }}"
     annotation: "Updated: {{ name_date }} "
     state: present
