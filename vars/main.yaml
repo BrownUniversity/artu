@@ -5,5 +5,5 @@ vsphere_definition:
     vsp_datastore: "ds-dev-nfs-templates"
     vsp_cluster: "dev-cluster"
     vsp_datacenter: "DEV"
-    vsp_folder: "vm/unix"
+    vsp_folder: "vm/templates"
     vsp_hostname: "pvcservercit.ad.brown.edu"

@@ -15,10 +15,8 @@
   tags: [ uuid, olduuid ]
 - include_tasks: renameold.yaml
   tags: [ rename, renameold ]
-- include_tasks: renamelatest.yaml
-  tags: [ rename, renamelatest ]
 - include_tasks: updatenotes.yaml
   tags: notes
-- include_tasks: convert.yaml
-  tags: convert
+- include_tasks: renamelatest.yaml
+  tags: [ rename, renamelatest ]
 ...
