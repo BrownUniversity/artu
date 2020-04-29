@@ -66,7 +66,7 @@ artu.olduuid: pass.yaml
 
 #artu.notes: @ run notes
 artu.notes: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags notes
+	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags "uuid,notes"
 
 #artu.rename: @ run rename
 artu.rename: pass.yaml
