@@ -17,7 +17,8 @@ sat_reg() {
 
 # Run updates
 yum_update() {
-  $YUMBIN $YUMARGS $YUMOPTS update
+  $YUMBIN $YUMARGS $YUMOPTS 
+  $YUMBIN $YUMARGS $YUMOPTS --exclude=open-vm-tools update
 }
 
 sat_reg
