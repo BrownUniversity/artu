@@ -10,7 +10,7 @@
     datacenter: "{{ vs_datacenter }}"
     datastore: "{{ vs_datastore }}"
     uuid: "{{ oldvm_facts.instance.instance_uuid }}"
-    name: "{{vs_os}}-{{ nsme_date }}"
+    name: "{{vs_os}}-{{ name_date }}"
     state: present
   delegate_to: localhost
   tags: [rename, renameold ]
