@@ -1,18 +1,5 @@
 ---
-- name: Rename old template
-  vars:
-    name_date: "{{ lookup('pipe','date +%Y_%m') }}"
-  vmware_guest: 
-    hostname: "{{ vs_hostname }}"
-    username: "{{ vs_name }}"
-    password: "{{ vs_password }}"
-    validate_certs: no
-    datacenter: "{{ vs_datacenter }}"
-    datastore: "{{ vs_datastore }}"
-    cluster: "{{ vs_cluster }}"
-    folder: "/{{ vs_datacenter }}/{{ vs_folder }}"
-    uuid: "{{ oldvm_facts.instance.instance_uuid }}"
-    name: "{{vs_os}}-{{ name_date }}"
-    state: present
+- name: convert old to VM # Usign PWSH script
+    shell: /usr/bin/pwsh files/rename.ps1 "{{ vs_hostname }}"  "{{ vs_name }}" "{{ vs_password }}" "{{ vs_template }}" "{{vs_os}}-{{ name_date }}""
   delegate_to: localhost
-  tags: [rename, renameold ]
+  tags: [rename, renameold]
