@@ -28,7 +28,7 @@ endif
 
 #chmod.script: @ ensure scripts have execute perm
 chmod.script:
-	chmod 755 files/sat_remove.shell
+	chmod 755 files/sat_remove.sh
 
 # Targets
 
