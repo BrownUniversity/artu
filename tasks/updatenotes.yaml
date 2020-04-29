@@ -8,7 +8,7 @@
     password: "{{ vs_password }}"
     validate_certs: no
     name: "{{ inventory_hostname }}"
-    annotation: "Updated: {{ name_date }} "
+    annotation: "{{ VM_Notes}}\nUpdated: {{ name_date }} "
     state: present
   delegate_to: localhost
   tags: notes
