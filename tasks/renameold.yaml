@@ -1,5 +1,7 @@
 ---
 - name: Rename old template
+  vars:
+    name_date: "{{ lookup('pipe','date +%Y_%m') }}"
   vmware_guest: 
     hostname: "{{ vs_hostname }}"
     username: "{{ vs_name }}"
@@ -8,7 +10,7 @@
     datacenter: "{{ vs_datacenter }}"
     datastore: "{{ vs_datastore }}"
     uuid: "{{ oldvm_facts.instance.instance_uuid }}"
-    name: "{{vs_os}}_{{ ansible_date_time }}"
+    name: "{{vs_os}}-{{ nsme_date }}"
     state: present
   delegate_to: localhost
   tags: [rename, renameold ]
