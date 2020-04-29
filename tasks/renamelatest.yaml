@@ -1,5 +1,5 @@
 ---
-- name: convert new to latest # Usign PWSH script
+- name: rename new to latest and convert to template # Usign PWSH script
   shell: /usr/bin/pwsh files/rename_latest.ps1 "{{ vs_hostname }}" "{{ vs_name }}" "{{ vs_password }}" "{{ inventory_hostname }}" "{{vs_os}}_latest"
   delegate_to: localhost
   tags: [rename, renamelatest]
