@@ -1,5 +1,5 @@
 # Variables
-YML=RHEL7_test.yaml
+YML=templates.yaml
 TAGS=NONE
 ANSOPT=
 
