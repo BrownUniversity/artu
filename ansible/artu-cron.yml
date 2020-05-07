@@ -1,6 +1,11 @@
 ---
 - hosts: localhost
   tasks:
+    - name: ENV for the run
+      cron:
+        name: AUTOMATED
+        env: yes
+        job: true
     - name: ARTU cronjob, runs after DEV update day
       cron:
         name: "ARTU run"
