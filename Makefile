@@ -17,6 +17,8 @@ var.list:
 	@echo TAGS: Tags to run for artu.check target. Default: ${TAGS}
 	@echo ANSOPT: Options to ansible, like verbose. Default: ${ANSOPT}
 
+.PHONY : all clean chmod artu
+
 # Collected targets
 #secrets : @ Files to decrypt
 SECRET_FILES=$(shell cat .blackbox/blackbox-files.txt)
@@ -78,7 +80,22 @@ artu.renameold: pass.yaml
 check.artu: pass.yaml
 	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags ${TAGS} --check
 
-#artu: @ run it all
+#clean: @ clean all
+clean: clean.shred
+
+#clean.shred: @ Shred decrypted files
+.PHONY: clean.shred
+clean.shred: 
+	SECRET_FILES=$(shell cat .blackbox/blackbox-files.txt)
+	ifdef AUTOMATED
+		rm -f $(SECRET_FILES)
+	else
+		blackbox_shred_all_files
+	endif
+
+#artu: @ run artu
 artu: pass.yaml
 	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML}
-# Cleanup from tests
+
+#all: @ run artu, then clean
+all: artu clean
