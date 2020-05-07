@@ -3,7 +3,7 @@ one:
     rhel8updating:                              # Change to name of VM
   vars:
     VM_ip: 10.4.25.116                         # IP 
-    VM_notes: "* RHEL 7 installed\n* Root - 60g\n* Swap - 4g\n* 64bit\n* Hotplug MEM\n* Hot-Add CPU\n* 5 sec boot delay\n* No floppy)\n* integrated /boot\*EFI boot"    # description in Vcenter
+    VM_notes: "* RHEL 7 installed\n* Root - 60g\n* Swap - 4g\n* 64bit\n* Hotplug MEM\n* Hot-Add CPU\n* 5 sec boot delay\n* No floppy)\n* integrated /boot\n* EFI boot"    # description in Vcenter
     vs_portgroup: "10.4.25.x"                # Usually subnet plus ".x"
     vsphere_lookup: ent_dev
     vs_template: RHEL8_latest
