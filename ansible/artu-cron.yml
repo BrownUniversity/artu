@@ -7,11 +7,11 @@
         minute: "0"
         hour: "7"
         weekday: "4"
-        job: "cd $HOME/artu ; files/runonweek.sh -w 1 -c \" make artu \" "
+        job: "cd $HOME/artu ; files/runonweek.sh -w 1 -c \" make all \" "
     - name: ARTU pull or clone 
       cron:
         name: "ARTU code pull or clone"
         minute: "0"
         hour: "6"
         weekday: "4"
-        job: "cd $HOME; if test -d artu; then git -C artu pull; else git clone https://github.com/BrownUniversity/artu.git; fi"
+        job: "cd $HOME; if test -d artu; then cd artu; git pull; else git clone https://github.com/BrownUniversity/artu.git; fi"
