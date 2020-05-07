@@ -18,10 +18,16 @@ Bash
 Satellite   
 
 ### Prerequisites
-Existing working template  
+* Existing working template in Vcenter  
+* System account on server that will run the code  
 
 ### Installing
 Clone repo [git@github.com:BrownUniversity/artu.git](git@github.com:BrownUniversity/artu.git)
+
+Once pulled down, run ```make install``` to set the crontabs
+The crontabs will:  
+1. Run the ARTU updater 1st Wednesday of the month
+2. Pull any git code changes every Wednesday
 
 ## Deployment
 Run make commands as needed. To see available commands, run ```make help```.
