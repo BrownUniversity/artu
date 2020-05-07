@@ -1,7 +1,10 @@
-- name: Put in the ARTU cronjob, runs after DEV update day
-  cron:
-    name: "ARTU run"
-    minute: "0"
-    hour: "7"
-    weekday: "4"
-    job: "cd $HOME/artu ; files/runonweek.sh -w 1 -c \" make artu \" "
+---
+- hosts: localhost
+  tasks:
+    - name: Put in the ARTU cronjob, runs after DEV update day
+      cron:
+        name: "ARTU run"
+        minute: "0"
+        hour: "7"
+        weekday: "4"
+        job: "cd $HOME/artu ; files/runonweek.sh -w 1 -c \" make artu \" "
