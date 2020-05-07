@@ -34,47 +34,47 @@ chmod.script:
 
 #artu.deploy: @ run deploy
 artu.deploy: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags deploy
+	ANSIBLE_ROLES_PATH=../ ansible-playbook ${ANSOPT} deploy_it.yaml -i ${YML} --tags deploy
 
 #artu.transfer: @ run transfer
 artu.transfer: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags transfer
+	ANSIBLE_ROLES_PATH=../ ansible-playbook ${ANSOPT} deploy_it.yaml -i ${YML} --tags transfer
 
 #artu.update: @ run update
 artu.update: pass.yaml chmod.script
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags update
+	ANSIBLE_ROLES_PATH=../ ansible-playbook ${ANSOPT} deploy_it.yaml -i ${YML} --tags update
 
 #artu.cleaninstall: @ run cleaninstall
 artu.cleaninstall: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags cleaninstall
+	ANSIBLE_ROLES_PATH=../ ansible-playbook ${ANSOPT} deploy_it.yaml -i ${YML} --tags cleaninstall
 
 #artu.shutdown: @ run shutdown
 artu.shutdown: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags shutdown
+	ANSIBLE_ROLES_PATH=../ ansible-playbook ${ANSOPT} deploy_it.yaml -i ${YML} --tags shutdown
 
 
 #artu.notes: @ run notes
 artu.notes: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags "notes"
+	ANSIBLE_ROLES_PATH=../ ansible-playbook ${ANSOPT} deploy_it.yaml -i ${YML} --tags "notes"
 
 #artu.rename: @ run rename
 artu.rename: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags rename
+	ANSIBLE_ROLES_PATH=../ ansible-playbook ${ANSOPT} deploy_it.yaml -i ${YML} --tags rename
 
 #artu.renamelatest: @ run renamelatest
 artu.renamelatest: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags renamelatest
+	ANSIBLE_ROLES_PATH=../ ansible-playbook ${ANSOPT} deploy_it.yaml -i ${YML} --tags renamelatest
 
 #artu.renameold: @ run renameold
 artu.renameold: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags renameold
+	ANSIBLE_ROLES_PATH=../ ansible-playbook ${ANSOPT} deploy_it.yaml -i ${YML} --tags renameold
 
 #Checks
 #check.artu: @ run artu with check and TAG
 check.artu: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags ${TAGS} --check
+	ANSIBLE_ROLES_PATH=../ ansible-playbook ${ANSOPT} deploy_it.yaml -i ${YML} --tags ${TAGS} --check
 
 #artu: @ run it all
 artu: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML}
+	ANSIBLE_ROLES_PATH=../ ansible-playbook ${ANSOPT} deploy_it.yaml -i ${YML}
 # Cleanup from tests
