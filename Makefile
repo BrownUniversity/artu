@@ -2,7 +2,7 @@
 YML=templates.yaml
 TAGS=NONE
 ANSOPT= 
-ANSCFG = ANSIBLE_CONFIG=ansible.cfg
+ANSCFG = ANSIBLE_CONFIG=ansible/ansible.cfg
 
 # Help system
 .DEFAULT_GOAL := help
@@ -32,6 +32,9 @@ chmod.script:
 	chmod 755 files/sat_remove.sh
 
 # Targets
+#install: @ setup cronjob
+install: 
+		${ANSCFG}  ansible-playbook ansible/artu-cron.yml
 
 #artu.deploy: @ run deploy
 artu.deploy: pass.yaml
