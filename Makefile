@@ -1,7 +1,8 @@
 # Variables
-YML=RHEL7_test.yaml
+YML=templates.yaml
 TAGS=NONE
-ANSOPT=
+ANSOPT= 
+ANSCFG = ANSIBLE_CONFIG=ansible/ansible.cfg
 
 # Help system
 .DEFAULT_GOAL := help
@@ -31,50 +32,53 @@ chmod.script:
 	chmod 755 files/sat_remove.sh
 
 # Targets
+#install: @ setup cronjob
+install: 
+		${ANSCFG}  ansible-playbook ansible/artu-cron.yml
 
 #artu.deploy: @ run deploy
 artu.deploy: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags deploy
+	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags deploy
 
 #artu.transfer: @ run transfer
 artu.transfer: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags transfer
+	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags transfer
 
 #artu.update: @ run update
 artu.update: pass.yaml chmod.script
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags update
+	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags update
 
 #artu.cleaninstall: @ run cleaninstall
 artu.cleaninstall: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags cleaninstall
+	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags cleaninstall
 
 #artu.shutdown: @ run shutdown
 artu.shutdown: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags shutdown
+	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags shutdown
 
 
 #artu.notes: @ run notes
 artu.notes: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags "notes"
+	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags "notes"
 
 #artu.rename: @ run rename
 artu.rename: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags rename
+	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags rename
 
 #artu.renamelatest: @ run renamelatest
 artu.renamelatest: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags renamelatest
+	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags renamelatest
 
 #artu.renameold: @ run renameold
 artu.renameold: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags renameold
+	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags renameold
 
 #Checks
 #check.artu: @ run artu with check and TAG
 check.artu: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags ${TAGS} --check
+	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML} --tags ${TAGS} --check
 
 #artu: @ run it all
 artu: pass.yaml
-	ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML}
+	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML}
 # Cleanup from tests

@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  tasks:
+    - name: ARTU cronjob, runs after DEV update day
+      cron:
+        name: "ARTU run"
+        minute: "0"
+        hour: "7"
+        weekday: "4"
+        job: "cd $HOME/artu ; files/runonweek.sh -w 1 -c \" make artu \" "
+    - name: ARTU pull or clone 
+      cron:
+        name: "ARTU code pull or clone"
+        minute: "0"
+        hour: "6"
+        weekday: "4"
+        job: "cd $HOME; if test -d artu; then git -C artu pull; else git clone https://github.com/BrownUniversity/artu.git; fi"
