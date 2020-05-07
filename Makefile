@@ -1,7 +1,7 @@
 # Variables
 YML=templates.yaml
 TAGS=NONE
-ANSOPT=
+ANSOPT= ANSIBLE_CONFIG=ansible.cfg
 
 # Help system
 .DEFAULT_GOAL := help
