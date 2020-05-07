@@ -32,6 +32,7 @@ endif
 #chmod.script: @ ensure scripts have execute perm
 chmod.script:
 	chmod 755 files/sat_remove.sh
+	chmod 755 files/runonweek.sh
 
 # Targets
 #install: @ setup cronjob
@@ -94,7 +95,7 @@ clean.shred:
 	endif
 
 #artu: @ run artu
-artu: pass.yaml
+artu: pass.yaml chmod.script
 	${ANSCFG} ANSIBLE_ROLES_PATH=../ ansible-playbook deploy_it.yaml ${ANSOPT} -i ${YML}
 
 #all: @ run artu, then clean
