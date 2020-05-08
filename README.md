@@ -10,26 +10,30 @@ This is meant to be deployed with a couple commands, so that it can just be run 
 
 Clone repo [git@github.com:BrownUniversity/artu.git](git@github.com:BrownUniversity/artu.git) and then run ```make artu```.  
 
-### Software used
+## Software used
 GnuMake  
 Ansible  
 PowerShell  
 Bash  
-Satellite   
+Satellite  
+GnuPG (secrets) 
 
-### Prerequisites
+## Prerequisites
 * Existing working template in Vcenter  
 * System account on server that will run the code  
 
-### Installing
+## Installing
 Clone repo [git@github.com:BrownUniversity/artu.git](git@github.com:BrownUniversity/artu.git)
 
-Once pulled down, run ```make install``` to set the crontabs
+Next, run ```make install``` to set the crontabs  
 The crontabs will:  
 1. Run the ARTU updater 1st Wednesday of the month
-2. Pull any git code changes every Wednesday
+2. Pull any git code changes every Wednesday  
 
-## Deployment
+### Keys  
+Import the CIS-VO Automation GPG keys into the system account. Those keys are not included in the repo, and must be obtained seperately.  
+
+## Testing
 Run make commands as needed. To see available commands, run ```make help```.
 
 ## Authors
