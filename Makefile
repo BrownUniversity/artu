@@ -87,12 +87,11 @@ clean: clean.shred
 #clean.shred: @ Shred decrypted files
 .PHONY: clean.shred
 clean.shred: 
-	SECRET_FILES=$(shell cat .blackbox/blackbox-files.txt)
-	ifdef AUTOMATED
-		rm -f $(SECRET_FILES)
-	else
-		blackbox_shred_all_files
-	endif
+ifdef AUTOMATED
+	rm -f $(SECRET_FILES)
+else
+	blackbox_shred_all_files
+endif
 
 #artu: @ run artu
 artu: pass.yaml chmod.script
