@@ -17,14 +17,14 @@ sat_reg() {
 
 # Run updates
 yum_update() {
-  $YUMBIN $YUMARGS $YUMOPTS 
   $YUMBIN $YUMARGS $YUMOPTS --exclude=open-vm-tools update
 }
 
+clean_katello {
+$YUMBIN $YUMARGS $YUMOPTS remove katello-ca-consumer'*'
+}
+
+
 sat_reg
 yum_update
-
-  # Failure 
-    # exit with message and status
-
-# Clean subscription
+clean_katello
