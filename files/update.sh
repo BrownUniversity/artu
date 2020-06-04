@@ -20,7 +20,7 @@ yum_update() {
   $YUMBIN $YUMARGS $YUMOPTS --exclude=open-vm-tools update
 }
 
-clean_katello {
+clean_katello() {
 $YUMBIN $YUMARGS $YUMOPTS remove katello-ca-consumer'*'
 }
 
