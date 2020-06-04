@@ -12,7 +12,7 @@ sat_reg() {
   rpm -Uvh https://psatcit.services.brown.edu/pub/katello-ca-consumer-latest.noarch.rpm
   subscription-manager clean
   subscription-manager register --org BrownCIS --activationkey "$KEY"
-  yum -y -d 0 -e 0 install katello-agent
+  $YUMBIN $YUMARGS $YUMOPTS install katello-agent
 }
 
 # Run updates
